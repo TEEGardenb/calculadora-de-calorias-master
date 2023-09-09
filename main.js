@@ -54,8 +54,6 @@ function calcularCalorias() {
     return;
   }
 
-  //let calculoCalorias;
-
   const formulaHombres =
     actividad.value *
       (multiplicadorTMB.peso * peso.value +
