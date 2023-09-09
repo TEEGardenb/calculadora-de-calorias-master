@@ -54,27 +54,24 @@ function calcularCalorias() {
     return;
   }
 
-  let calculoCalorias;
+  //let calculoCalorias;
 
-  if (genero.id === "masculino") {
-    //Formula hombres: valor actividad x (10 x peso en kg) + (6,25 × altura en cm) - (5 × edad en años) + 5
-    console.log("formula hombres:");
-    calculoCalorias =
-      actividad.value *
-        (multiplicadorTMB.peso * peso.value +
-          multiplicadorTMB.altura * altura.value -
-          multiplicadorTMB.edad * Edad.value) +
-      5;
-  } else {
-    //Formula mujeres: valor actividad x (10 x peso en kg) + (6,25 × altura en cm) - (5 × edad en años) - 161
-    console.log("formula mujeres:");
-    calculoCalorias =
-      actividad.value *
-        (multiplicadorTMB.peso * peso.value +
-          multiplicadorTMB.altura * altura.value -
-          multiplicadorTMB.edad * Edad.value) -
-      161;
-  }
+  const formulaHombres =
+    actividad.value *
+      (multiplicadorTMB.peso * peso.value +
+        multiplicadorTMB.altura * altura.value -
+        multiplicadorTMB.edad * Edad.value) +
+    5;
+
+  const formulaMujeres =
+    actividad.value *
+      (multiplicadorTMB.peso * peso.value +
+        multiplicadorTMB.altura * altura.value -
+        multiplicadorTMB.edad * Edad.value) -
+    161;
+
+  const calculoCalorias =
+    genero.id === "masculino" ? formulaHombres : formulaMujeres;
   console.log(calculoCalorias);
 
   // totalCalorias.value = `${Math.floor(calculoCalorias)} kcal`;
