@@ -112,6 +112,43 @@ function determinarGrupoPoblacional(edad) {
   }
 }
 
+// Funcion para el uso de solo texto con codigo ASCII
+function soloTexto(evt) {
+  var code = evt.which ? evt.which : evt.keyCode;
+
+  if (code == 8) {
+    // barra espaciadora
+    return true;
+  } else if (code >= 65 && code <= 90) {
+    // letras
+    return true;
+  } else if (code >= 97 && code <= 122) {
+    // letras
+    return true;
+  } else if (code == 32) {
+    // espacio
+    return true;
+  } else {
+    // otros valores
+    return false;
+  }
+}
+
+function soloNumeros(evt) {
+  var code = evt.which ? evt.which : evt.keyCode;
+
+  if (code == 8) {
+    // backspace.
+    return true;
+  } else if (code >= 48 && code <= 57) {
+    // is a number.
+    return true;
+  } else {
+    // other keys.
+    return false;
+  }
+}
+
 //Funcion para limpiar inputs
 function limpiarInputs() {
   nombrep.value = null;

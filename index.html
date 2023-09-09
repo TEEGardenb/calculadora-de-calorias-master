@@ -67,6 +67,7 @@
                     id="nombre"
                     class="form-control"
                     placeholder="Digíte su nombre"
+                    onkeypress="return soloTexto(event)"
                   />
                 </div>
 
@@ -93,6 +94,7 @@
                     id="num_documento"
                     class="form-control"
                     placeholder="Digíte el numero de documento"
+                    onkeypress="return soloNumeros(event)"
                   />
                 </div>
 
@@ -105,6 +107,7 @@
                     min="15"
                     max="80"
                     placeholder="Digíte su edad"
+                    onkeypress="return soloNumeros(event)"
                   />
                 </div>
 
@@ -115,6 +118,7 @@
                     id="peso"
                     class="form-control"
                     placeholder="Digíte su peso en kilogramos"
+                    onkeypress="return soloNumeros(event)"
                   />
                 </div>
 
@@ -127,6 +131,7 @@
                     placeholder="Digíte su altura en centímetros"
                     min="100"
                     max="250"
+                    onkeypress="return soloNumeros(event)"
                   />
                 </div>
 
